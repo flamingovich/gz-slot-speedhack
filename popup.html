@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">SSH</div>
+      <div class="title">
+        <span class="title-main">SlotSpeedHack</span>
+        <span class="title-by">by gz</span>
+      </div>
+    </div>
+
+    <!-- Master toggle -->
+    <div class="card">
+      <div class="card-row">
+        <div class="card-label">Статус</div>
+        <div class="toggle-group">
+          <span class="toggle-status" id="statusText">OFF</span>
+          <button class="toggle-btn" id="enableToggle" data-active="false">
+            <span class="toggle-knob"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Speed control -->
+    <div class="card" id="speedCard">
+      <div class="card-row">
+        <div class="card-label">Скорость</div>
+        <div class="speed-display" id="speedDisplay">1.0x</div>
+      </div>
+      <div class="slider-wrap">
+        <input type="range" id="speedSlider" min="1" max="100" value="10" step="1">
+        <div class="slider-labels">
+          <span>0.1x</span>
+          <span>10x</span>
+        </div>
+      </div>
+      <div class="presets" id="presetGroup">
+        <button class="preset-btn active" data-speed="1">1x</button>
+        <button class="preset-btn" data-speed="2">2x</button>
+        <button class="preset-btn" data-speed="3">3x</button>
+        <button class="preset-btn" data-speed="5">5x</button>
+        <button class="preset-btn" data-speed="10">10x</button>
+      </div>
+    </div>
+
+    <!-- Extra mode -->
+    <div class="card" id="extraCard">
+      <div class="card-row">
+        <div class="card-label">
+          <label class="checkbox-wrap" id="extraCheckbox">
+            <input type="checkbox" id="extraToggle">
+            <span class="checkbox-box"></span>
+            <span>EXTRA СКОРОСТЬ!!!</span>
+          </label>
+        </div>
+      </div>
+      <div class="extra-slider-wrap hidden" id="extraSection">
+        <div class="card-row">
+          <div class="card-label subtle">EXTRA</div>
+          <div class="speed-display extra-display" id="extraSpeedDisplay">10x</div>
+        </div>
+        <div class="slider-wrap">
+          <input type="range" id="extraSlider" min="10" max="1000" value="10" step="10" class="extra-range">
+          <div class="slider-labels">
+            <span>10x</span>
+            <span>1000x</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Apply -->
+    <button class="apply-btn" id="applyBtn">Применить</button>
+    <div class="feedback hidden" id="feedback">Готово</div>
+
+    <!-- Footer -->
+    <div class="footer">v3.0 — без перезагрузки</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

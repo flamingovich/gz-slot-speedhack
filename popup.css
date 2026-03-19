@@ -1,0 +1,349 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 280px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #111114;
+  color: #e0e0e0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Layout ===== */
+
+.app {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===== Header ===== */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  background: #e0e0e0;
+  color: #111;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  letter-spacing: -0.5px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.title-main {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.title-by {
+  font-size: 11px;
+  font-weight: 400;
+  color: #555;
+}
+
+/* ===== Card ===== */
+
+.card {
+  background: #18181c;
+  border: 1px solid #252528;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #999;
+}
+
+.card-label.subtle {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ===== Toggle ===== */
+
+.toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 28px;
+  text-align: right;
+}
+
+.toggle-status.on {
+  color: #4ade80;
+}
+
+.toggle-btn {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  background: #333;
+  border: none;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+}
+
+.toggle-btn[data-active="true"] {
+  background: #4ade80;
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  pointer-events: none;
+}
+
+.toggle-btn[data-active="true"] .toggle-knob {
+  transform: translateX(18px);
+}
+
+/* ===== Speed Display ===== */
+
+.speed-display {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.extra-display {
+  color: #f87171;
+}
+
+/* ===== Slider ===== */
+
+.slider-wrap {
+  margin-top: 10px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #111;
+  transition: transform 0.1s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+}
+
+.extra-range::-webkit-slider-thumb {
+  background: #f87171;
+  border-color: #111;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: 10px;
+  color: #444;
+  font-weight: 500;
+}
+
+/* ===== Presets ===== */
+
+.presets {
+  display: flex;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.preset-btn {
+  flex: 1;
+  height: 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  background: #222;
+  color: #888;
+  border: 1px solid #2a2a2e;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.preset-btn:hover {
+  background: #2a2a2e;
+  color: #ccc;
+}
+
+.preset-btn.active {
+  background: #fff;
+  color: #111;
+  border-color: #fff;
+}
+
+/* ===== Checkbox ===== */
+
+.checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f87171;
+  user-select: none;
+}
+
+.checkbox-wrap input {
+  display: none;
+}
+
+.checkbox-box {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #444;
+  border-radius: 3px;
+  position: relative;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.checkbox-wrap input:checked ~ .checkbox-box {
+  background: #f87171;
+  border-color: #f87171;
+}
+
+.checkbox-wrap input:checked ~ .checkbox-box::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ===== Apply Button ===== */
+
+.apply-btn {
+  width: 100%;
+  height: 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  background: #fff;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: -0.2px;
+}
+
+.apply-btn:hover {
+  background: #e0e0e0;
+}
+
+.apply-btn:active {
+  transform: scale(0.98);
+}
+
+.apply-btn.extra-mode {
+  background: #f87171;
+  color: #fff;
+}
+
+.apply-btn.extra-mode:hover {
+  background: #ef4444;
+}
+
+/* ===== Feedback ===== */
+
+.feedback {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #4ade80;
+  padding: 4px 0;
+  transition: opacity 0.3s;
+}
+
+/* ===== Footer ===== */
+
+.footer {
+  text-align: center;
+  font-size: 10px;
+  color: #333;
+  padding-top: 4px;
+  border-top: 1px solid #1a1a1e;
+}
+
+/* ===== Utility ===== */
+
+.hidden {
+  display: none !important;
+}
+
+.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
